@@ -1,0 +1,23 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolahcm/cmstest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolahcm/cmstest/issues"
+  },
+  "homepage": "https://github.com/nicolahcm/cmstest#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

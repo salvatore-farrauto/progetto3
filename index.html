@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test per backend</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+
+
+<body>
+    <hr>
+    <h1>Back-Office del Blog </h1>
+    <hr>
+
+
+    <!-- Navigation BAR-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Back-Office</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary forNewArticle" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Create New Article
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div id="whereToAddPosts">
+        <div class="post featured" id="postModello">
+            <header>
+                Author: <i class="authorPost">Nicola</i>
+                <h4 class="title">Titolo: Modello di Post</h4>
+                <h5 class="subtitle">Sottotitolo: un minimo di descrizione del post</h5>
+            </header>
+
+            <article>
+                <div class="postInformation">
+                    <span class="badge badge-secondary archived">Archived/Not Archived</span>
+                    <span class="badge badge-secondary public">Public/Draft</span>
+                    <span class="badge badge-secondary featured">Featured/Not Featured</span>
+                </div>
+
+                <div class="bodyPost">
+                    Ciao a tutti, questo è il corpo/body del commento. Qui scriviamo varie cose. Aggiungiamo un po' di
+                    commenti. Bla Bla Lorem ipsum.Bla Bla Lorem ipsum . Bla Bla Lorem ipsum. Bla Bla Lorem ipsum.
+                    Bla Bla Lorem ipsum. Bla Bla Lorem ipsum. Bla Bla Lorem ipsum. Bla Bla Lorem ipsum.
+                </div>
+
+                <div class="postsControl">
+                    <button type="button" class="btn btn-primary btn-sm deletePost">Delete Post</button>
+                    <button type="button" class="btn btn-primary btn-sm publicPost">Archive Post</button>
+                    <button type="button" class="btn btn-primary forUpdateArticle" data-toggle="modal"
+                        data-target="#exampleModal">
+                        Update Post
+                    </button>
+                </div>
+            </article>
+            <footer>
+                <h5>Commenti:</h5>
+                <div class="commentsContainer" id="commentsContainerModel">
+                    <div class="singleComment" id="commentModel">
+                        <i class="commentAuthor">Nicola</i>:
+                        <i class="commentBody"> Ciao a tutti </i>;
+                        <i class="commentDate"> Quando? </i>
+                        <i class="commentInvisible"> True or False?</i>
+                        <button class="invisibleCommentBtn">ToggleInvisibilità</button>
+                    </div>
+                    <div class="singleComment">
+                        Silvia:
+                        Che bel post
+                        <button class="invisibleComment">ToggleInvisibilità</button>
+                    </div>
+                </div>
+            </footer>
+            <hr>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inserisci nuovo articolo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+                <div class="modal-body">
+                    <!-- Input values here-->
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="postAuthor" placeholder="Articolo di:">
+                                <input type="text" class="form-control" id="postTitle"
+                                    placeholder="inserisci il titolo">
+                                <input type="text" class="form-control" id="postSubTitle"
+                                    placeholder="inserisci il sottotitolo">
+                                <textarea class="form-control" placeholder="inserisci il testo" id="postBody"
+                                    rows="4"></textarea>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="publicCheck">
+                        <label class="form-check-label" for="defaultCheck1">
+                            public
+                        </label>
+                    </div>
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" value="" id="featuredCheck">
+                        <label class="form-check-label" for="defaultCheck2">
+                            featured
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Salva i cambi: -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="savePostButton">Save Article</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Prima si importano i modelli, poi i controllers. I viewers?-->
+    <script src="app/models/Post.js"></script>
+    <script src="jquerytest.js"></script>
+</body>
+
+
+</html>
